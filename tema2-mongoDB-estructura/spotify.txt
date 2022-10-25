@@ -1,0 +1,97 @@
+use spotify
+
+db.users.insert(
+{
+	"_id": "i8i6j5n4c234c54634b767",
+	"nom": "Pere",
+	"data_naixament": "1999-08-15",
+	"sexe": "M",
+	"pais": "ESP",
+	"codi_postal": "08080",
+	"email": "pere@gmail.com",
+	"password": "34t3g45h56hj",
+	"tipus": "premium", // [free, premium]
+	// -------------- [start content only premium] ---------------
+	"subscripcio": {
+		"data_inici": "2022-10-08",
+		"data_renovacio": "2022-11-08",
+		"forma_de_pagament": {
+			"tipus": "targeta", // [targeta, paypal]
+			// -------------- [start content only targeta] ---------------
+			"numero": "1234123445674566",
+			"mes_any": "05/25",
+			"codi_seguretat": "123"
+			// -------------- [end content only targeta] ---------------
+			// -------------- [start content only paypal] ---------------
+			"nom_usuari": ""
+			// -------------- [end content only paypal] ---------------
+		},
+		"pagaments": {
+			"0": {
+				"data": "2022-10-08",
+				"order_id": "1231234568712",
+				"total": "15.99"
+			}
+		}
+	},
+	// -------------- [end content only premium] ---------------
+	"playlists": {
+		"0": {
+			"playlist_id": "playlist_3r34tr43t4hn45",
+			"titol": "Cançons per conduir",
+			"data_creacio": "2022-01-12",
+			"songs": ["song_f4v43b5", "song_g5g45g34g45g","song_f5g45h65h6"], // ["artistes.song_id"]
+			"tipus": 1, // [1,0] 1 = activa, 0 = eliminada
+			"data_eliminada": "",
+			"songs_afegides": {
+				"0": {
+					"user_id": "123sdf3sdf12sd5848c38s",
+					"song_id": "song_vf43g45h6",
+					"data_afegida": "2022-05-16"
+				},
+				"1": {
+					"user_id": "6gt34gf3sdf12sd5848c38s",
+					"song_id": "song_qwd3fffw3",
+					"data_afegida": "2022-05-19"
+				}
+			}
+		}
+	},
+	"seguint": ["78enh35h23sdf12sd5848c38s","45g2gg45f12sd5848c38s"], // ["artistes._id"]
+	"favs": {
+		"albums": ["album_23r23f4t5g"],  // ["artistes.album_id"]
+		"songs": ["song_e23f34g3","song_8i85kjh"]  // ["artistes.song_id"]
+	}
+}
+)
+
+db.artistes.insert(
+{
+	"_id": "7k76j35j33sdf12sd5848c38s",
+	"nom": "Metallica",
+	"imatge": "metallica.jpg",
+	"albums": {
+		"0": {
+			"album_id": "album_23r23f4t5g",
+			"titol": "Black album",
+			"any_publicacio": "1991",
+			"imatge": "metallica_black_album.jpg",
+			"songs": {
+				"0": {
+					"song_id": "song_e23f34g3",
+					"titol": "Enter Sandman",
+					"durada": "5:32",
+					"reproduccions": "12345884"
+				},
+				"1": {
+					"song_id": "song_8i85kjh",
+					"titol": "Sad but True",
+					"durada": "5:25",
+					"reproduccions": "95884"
+				}
+			}
+		}
+	},
+	"artistes_relacionats": ["8k5kj634j33ssd5848c38s","2g54b6y5635j33sdf145t45h"]
+}
+)
